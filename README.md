@@ -7,9 +7,9 @@ This repository acts like a helm chart repository for various Kubernetes applica
 ## TL;DR
 
 ```bash
-helm repo add kubitodev https://charts.kubito.dev
-helm search repo kubitodev
-helm install example kubitodev/<chart>
+helm repo add felina22 https://felina22.github.io/helms
+helm search repo felina22
+helm install example felina22/<chart>
 ```
 
 ## License
