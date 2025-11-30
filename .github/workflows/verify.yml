@@ -17,10 +17,7 @@ jobs:
         run: git fetch --prune --unshallow
 
       - name: Run Helm lint
-        uses: helm/chart-testing-action@v2.6.1
-        with:
-          command: lint
-          config: .github/verify-config.yaml
+        uses: helm/chart-testing-action@v2.8.0
 
       - name: Set up Node.js (required for readme-generator)
         uses: actions/setup-node@v3
