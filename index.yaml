@@ -1,0 +1,258 @@
+apiVersion: v1
+entries:
+  cloudflared:
+  - apiVersion: v2
+    appVersion: 2025.9.1
+    created: "2025-12-01T00:03:20.126404047Z"
+    description: Kubito Cloudflared (Argo Tunnel) Helm Chart
+    digest: ec6d8c325641858789d199036b62c5d8d61b479576941503e145dd1585b94944
+    home: https://github.com/kubitodev/helm/tree/main/charts/cloudflared
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - cloudflare
+    - cloudflared
+    - argo
+    - tunnel
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: cloudflared
+    sources:
+    - https://github.com/cloudflare/cloudflared
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/cloudflared-1.7.3/cloudflared-1.7.3.tgz
+    version: 1.7.3
+  excalidraw:
+  - apiVersion: v2
+    appVersion: 0.17.6
+    created: "2025-12-01T00:03:22.167059045Z"
+    description: Kubito Excalidraw Helm Chart
+    digest: 7e5f062c22d22ecc7f6396e2dad118f990908058258b9d22d14124c545acb350
+    home: https://github.com/kubitodev/helm/tree/main/charts/excalidraw
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - excalidraw
+    - diagrams
+    - design
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: excalidraw
+    sources:
+    - https://github.com/excalidraw/excalidraw
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/excalidraw-1.0.0/excalidraw-1.0.0.tgz
+    version: 1.0.0
+  kubernetes-cloudflare-ddns:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-12-01T00:03:22.396267377Z"
+    description: Kubito Kubernetes Cloudflare DDNS Helm Chart
+    digest: 74adfb7bae8c36fd0bbbe0c76d482d7f86954c7be52530d0652e9727831ee4d2
+    home: https://github.com/kubitodev/helm/tree/main/charts/kubernetes-cloudflare-ddns
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - cloudflare
+    - ddns
+    - cronjob
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: kubernetes-cloudflare-ddns
+    sources:
+    - https://github.com/kubitodev/kubernetes-cloudflare-ddns
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/kubernetes-cloudflare-ddns-1.0.6/kubernetes-cloudflare-ddns-1.0.6.tgz
+    version: 1.0.6
+  outline:
+  - apiVersion: v2
+    appVersion: 0.82.0
+    created: "2025-12-01T00:03:22.637140986Z"
+    dependencies:
+    - condition: global.postgresqlEnabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.x.x
+    - condition: global.redisEnabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.x.x
+    - condition: global.minioEnabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.x.x
+    description: Kubito Outline Wiki Helm Chart
+    digest: a1fb6393eece1ebdede569cfc6299be39cafae97e880d8d9572185b5e5b3a24d
+    home: https://github.com/kubitodev/helm/tree/main/charts/outline
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - outline
+    - wiki
+    - docs
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: outline
+    sources:
+    - https://github.com/outline/outline
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/outline-1.2.2/outline-1.2.2.tgz
+    version: 1.2.2
+  penpot:
+  - apiVersion: v2
+    appVersion: 2.2.1
+    created: "2025-12-01T00:03:22.875118777Z"
+    dependencies:
+    - condition: global.postgresqlEnabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.x.x
+    - condition: global.redisEnabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.x.x
+    description: Kubito Penpot Helm Chart
+    digest: 04fc63650cef27f0e03e5c80747907874de426d3ea68f46bbc601c4d494429e3
+    home: https://github.com/kubitodev/helm/tree/main/charts/penpot
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - penpot
+    - penpotapp
+    - design
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: penpot
+    sources:
+    - https://github.com/penpot/penpot
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/penpot-1.2.1/penpot-1.2.1.tgz
+    version: 1.2.1
+  searxng:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-12-01T00:03:23.050865976Z"
+    description: Kubito SearXNG Helm Chart
+    digest: cd5c4f7dbe3ccdc5d013e1383eb3e65cc9e9771a91629238ea725aeb44dca796
+    home: https://github.com/kubitodev/helm/tree/main/charts/searxng
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - searxng
+    - metasearch
+    - search
+    - privacy
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: searxng
+    sources:
+    - https://github.com/searxng/searxng
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/searxng-1.0.7/searxng-1.0.7.tgz
+    version: 1.0.7
+  servarr:
+  - apiVersion: v2
+    appVersion: 1.2.2
+    created: "2025-12-01T00:03:23.261458065Z"
+    description: Kubito Servarr Helm Chart
+    digest: c4a0479646955dc1e89f5886569e84837a14c8030aea42f75c44e2181fce2879
+    home: https://github.com/kubitodev/helm/tree/main/charts/servarr
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - bazarr
+    - lidarr
+    - sonarr
+    - radarr
+    - flaresolverr
+    - jellyfin
+    - jellyseerr
+    - qbittorrent
+    - prowlarr
+    - cleanuparr
+    - sabnzbd
+    - mealie
+    - frigate
+    - vaultwarden
+    - plex
+    - emby
+    - immich
+    - nextcloud
+    - home-assistant
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: servarr
+    sources:
+    - https://github.com/Servarr
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/servarr-1.2.2/servarr-1.2.2.tgz
+    version: 1.2.2
+  traefik-cloudflared-source-ip:
+  - apiVersion: v2
+    appVersion: 2.10.7
+    created: "2025-12-01T00:03:23.480812654Z"
+    dependencies:
+    - condition: global.cloudflaredEnabled
+      name: cloudflared
+      repository: https://charts.kubito.dev
+      version: 1.x.x
+    - condition: global.traefikEnabled
+      name: traefik
+      repository: https://traefik.github.io/charts
+      version: 26.0.0
+    description: Kubito Traefik Cloudflared (Argo Tunnel) Real IP Helm Chart
+    digest: 428e59a3fe7c253163aa6c0e249f6ef6346efa8f2d32f69d433a4f257834f155
+    home: https://github.com/kubitodev/helm/tree/main/charts/traefik-cloudflared-source-ip
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - cloudflare
+    - cloudflared
+    - middleware
+    - real-ip
+    - source-ip
+    - argo-tunnel
+    - argo
+    - traefik
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: traefik-cloudflared-source-ip
+    sources:
+    - https://github.com/kubitodev/traefik-cloudflared-source-ip
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/traefik-cloudflared-source-ip-1.0.11/traefik-cloudflared-source-ip-1.0.11.tgz
+    version: 1.0.11
+  traefik-whitelist-ddns:
+  - apiVersion: v2
+    appVersion: 2.x.x
+    created: "2025-12-01T00:03:23.705476787Z"
+    description: Kubito Traefik Whitelist DDNS Helm Chart
+    digest: 3a6c8d36d18815969b60b620bfda73ffffff51777bc5fce02eee00ce2a6c80cf
+    home: https://github.com/kubitodev/helm/tree/main/charts/traefik-whitelist-ddns
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - traefik
+    - ddns
+    - cronjob
+    - middleware
+    - ip
+    - whitelist
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: traefik-whitelist-ddns
+    sources:
+    - https://github.com/kubitodev/traefik-whitelist-ddns
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/traefik-whitelist-ddns-1.0.5/traefik-whitelist-ddns-1.0.5.tgz
+    version: 1.0.5
+generated: "2025-12-01T00:03:23.705485634Z"
