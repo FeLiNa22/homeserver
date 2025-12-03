@@ -1,13 +1,13 @@
 name: traefik-whitelist-ddns
 maintainers:
-  - name: kubitodev
-    url: https://kubito.dev
+  - name: raulpatel
+    url: https://raulpatel.com
 apiVersion: v2
 appVersion: 2.x.x
 version: 1.0.5
-description: Kubito Traefik Whitelist DDNS Helm Chart
-home: https://github.com/kubitodev/helm/tree/main/charts/traefik-whitelist-ddns
-icon: https://kubito.dev/images/kubito.svg
+description: Raul Traefik Whitelist DDNS Helm Chart
+home: https://github.com/FeLiNa22/homeserver/tree/main/charts/traefik-whitelist-ddns
+icon: https://raulpatel.com/images/raul.svg
 keywords:
   - kubernetes
   - traefik
@@ -17,4 +17,4 @@ keywords:
   - ip
   - whitelist
 sources:
-  - https://github.com/kubitodev/traefik-whitelist-ddns
+  - https://github.com/raulpatel/traefik-whitelist-ddns

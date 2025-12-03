@@ -1,13 +1,13 @@
 name: servarr
 maintainers:
-  - name: kubitodev
-    url: https://kubito.dev
+  - name: raulpatel
+    url: https://raulpatel.com
 apiVersion: v2
 appVersion: 1.2.2
 version: 1.2.2
-description: Kubito Servarr Helm Chart
-home: https://github.com/kubitodev/helm/tree/main/charts/servarr
-icon: https://kubito.dev/images/kubito.svg
+description: Raul Servarr Helm Chart
+home: https://github.com/FeLiNa22/homeserver/tree/main/charts/servarr
+icon: https://raulpatel.com/images/raul.svg
 keywords:
   - kubernetes
   - bazarr

@@ -1,13 +1,13 @@
 name: traefik-cloudflared-source-ip
 maintainers:
-  - name: kubitodev
-    url: https://kubito.dev
+  - name: raulpatel
+    url: https://raulpatel.com
 apiVersion: v2
 appVersion: 2.10.7
 version: 1.0.11
-description: Kubito Traefik Cloudflared (Argo Tunnel) Real IP Helm Chart
-home: https://github.com/kubitodev/helm/tree/main/charts/traefik-cloudflared-source-ip
-icon: https://kubito.dev/images/kubito.svg
+description: Raul Traefik Cloudflared (Argo Tunnel) Real IP Helm Chart
+home: https://github.com/FeLiNa22/homeserver/tree/main/charts/traefik-cloudflared-source-ip
+icon: https://raulpatel.com/images/raul.svg
 keywords:
   - kubernetes
   - cloudflare
@@ -19,12 +19,12 @@ keywords:
   - argo
   - traefik
 sources:
-  - https://github.com/kubitodev/traefik-cloudflared-source-ip
+  - https://github.com/raulpatel/traefik-cloudflared-source-ip
 
 dependencies:
   - condition: global.cloudflaredEnabled
     name: cloudflared
-    repository: https://charts.kubito.dev
+    repository: https://charts.raulpatel.com
     # https://github.com/Masterminds/semver#checking-version-constraints
     version: 1.x.x
   - condition: global.traefikEnabled

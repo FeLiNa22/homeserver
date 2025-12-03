@@ -1,13 +1,13 @@
 name: nextcloud
 maintainers:
-  - name: kubitodev
-    url: https://kubito.dev
+  - name: raulpatel
+    url: https://raulpatel.com
 apiVersion: v2
 appVersion: 30.0.2
 version: 1.0.0
 description: Nextcloud Helm Chart
-home: https://github.com/kubitodev/helm/tree/main/charts/nextcloud
-icon: https://kubito.dev/images/kubito.svg
+home: https://github.com/FeLiNa22/homeserver/tree/main/charts/nextcloud
+icon: https://raulpatel.com/images/raul.svg
 keywords:
   - kubernetes
   - nextcloud
