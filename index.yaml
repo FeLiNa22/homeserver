@@ -1,5 +1,49 @@
 apiVersion: v1
 entries:
+  cloudflare-dynamic-ip-updater:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-12-03T05:58:39.550492124Z"
+    description: Raul Kubernetes Cloudflare DDNS Helm Chart
+    digest: ccfa083f17d851d3a01492177098dd740fd44bd5746f144cb550b6b8aa9bbcfb
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/kubernetes-cloudflare-ddns
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - cloudflare
+    - ddns
+    - cronjob
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: cloudflare-dynamic-ip-updater
+    sources:
+    - https://github.com/raulpatel/kubernetes-cloudflare-ddns
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/cloudflare-dynamic-ip-updater-1.0.0/cloudflare-dynamic-ip-updater-1.0.0.tgz
+    version: 1.0.0
+  cloudflare-tunnel:
+  - apiVersion: v2
+    appVersion: 2025.9.1
+    created: "2025-12-03T05:58:39.741439358Z"
+    description: Raul Cloudflared Tunnel Helm Chart
+    digest: 40d878c7233de65628586d133696abefe50f64340af57de758c7d31ac247af85
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/cloudflared
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - cloudflare
+    - cloudflared
+    - tunnel
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: cloudflare-tunnel
+    sources:
+    - https://github.com/cloudflare/cloudflared
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/cloudflare-tunnel-1.0.0/cloudflare-tunnel-1.0.0.tgz
+    version: 1.0.0
   cloudflared:
   - apiVersion: v2
     appVersion: 2025.9.1
@@ -45,6 +89,74 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/excalidraw-1.0.0/excalidraw-1.0.0.tgz
     version: 1.0.0
+  frigate:
+  - apiVersion: v2
+    appVersion: 0.14.1
+    created: "2025-12-03T05:58:40.150446092Z"
+    description: Frigate NVR Helm Chart
+    digest: fb6772753603a926180d0b58afa02d5fa0974a7f618e972d264224d2d2398cfe
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/frigate
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - frigate
+    - nvr
+    - security
+    - cameras
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: frigate
+    sources:
+    - https://github.com/blakeblackshear/frigate
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/frigate-1.0.0/frigate-1.0.0.tgz
+    version: 1.0.0
+  home-assistant:
+  - apiVersion: v2
+    appVersion: 2024.11.3
+    created: "2025-12-03T05:58:40.372144585Z"
+    description: Home Assistant Helm Chart
+    digest: 58a7c8b3b0d15305989c793df392434efb1ca521a2a4bc25812caa19890604c1
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/home-assistant
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - home-assistant
+    - smart-home
+    - automation
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: home-assistant
+    sources:
+    - https://github.com/home-assistant/core
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/home-assistant-1.0.0/home-assistant-1.0.0.tgz
+    version: 1.0.0
+  immich:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-12-03T05:58:40.566675032Z"
+    description: A Helm chart for Immich - High performance self-hosted photo and
+      video management solution
+    digest: 28d512d5333bfd6e08c205838bba867478d78fb184f5a19400f89015de74cd77
+    home: https://immich.app
+    keywords:
+    - immich
+    - photos
+    - videos
+    - media
+    - self-hosted
+    maintainers:
+    - name: FeLiNa22
+    name: immich
+    sources:
+    - https://github.com/immich-app/immich
+    type: application
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/immich-1.0.0/immich-1.0.0.tgz
+    version: 1.0.0
   kubernetes-cloudflare-ddns:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -67,6 +179,50 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/kubernetes-cloudflare-ddns-1.0.6/kubernetes-cloudflare-ddns-1.0.6.tgz
     version: 1.0.6
+  mealie:
+  - apiVersion: v2
+    appVersion: v2.2.0
+    created: "2025-12-03T05:58:40.745081266Z"
+    description: Mealie Helm Chart
+    digest: 26209c661e08a098e5add07396e11695e66f43c01e45b8df6a78b4c800f87dc6
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/mealie
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - mealie
+    - recipes
+    - cookbook
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: mealie
+    sources:
+    - https://github.com/mealie-recipes/mealie
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/mealie-1.0.0/mealie-1.0.0.tgz
+    version: 1.0.0
+  nextcloud:
+  - apiVersion: v2
+    appVersion: 30.0.2
+    created: "2025-12-03T05:58:40.933001049Z"
+    description: Nextcloud Helm Chart
+    digest: 585c9d3234265ecdb787591c91eae65147e9e3510623eb08f3cf3ca21a8ed1b2
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/nextcloud
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - nextcloud
+    - cloud
+    - storage
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: nextcloud
+    sources:
+    - https://github.com/nextcloud/server
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/nextcloud-1.0.0/nextcloud-1.0.0.tgz
+    version: 1.0.0
   outline:
   - apiVersion: v2
     appVersion: 0.82.0
@@ -102,6 +258,40 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/outline-1.2.2/outline-1.2.2.tgz
     version: 1.2.2
+  - apiVersion: v2
+    appVersion: 0.82.0
+    created: "2025-12-03T05:58:41.198898908Z"
+    dependencies:
+    - condition: global.postgresqlEnabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.x.x
+    - condition: global.redisEnabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.x.x
+    - condition: global.minioEnabled
+      name: minio
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.x.x
+    description: Raul Outline Wiki Helm Chart
+    digest: 68741f966a2a9333f85a5fa2638cd2d8f5906214944ef47c9831850c8fdb8337
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/outline
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - outline
+    - wiki
+    - docs
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: outline
+    sources:
+    - https://github.com/outline/outline
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/outline-1.0.0/outline-1.0.0.tgz
+    version: 1.0.0
   penpot:
   - apiVersion: v2
     appVersion: 2.2.1
@@ -133,6 +323,61 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/penpot-1.2.1/penpot-1.2.1.tgz
     version: 1.2.1
+  - apiVersion: v2
+    appVersion: 2.2.1
+    created: "2025-12-03T05:58:41.428136405Z"
+    dependencies:
+    - condition: global.postgresqlEnabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.x.x
+    - condition: global.redisEnabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.x.x
+    description: Raul Penpot Helm Chart
+    digest: d74f374ac926a5da8c7a519d5d654157a56450028a6b14358c41aa70cea36fcc
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/penpot
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - penpot
+    - penpotapp
+    - design
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: penpot
+    sources:
+    - https://github.com/penpot/penpot
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/penpot-1.0.0/penpot-1.0.0.tgz
+    version: 1.0.0
+  postgresql-ha:
+  - apiVersion: v2
+    appVersion: "16.6"
+    created: "2025-12-03T05:58:41.621744674Z"
+    description: A Helm chart for PostgreSQL using CloudNativePG operator with cluster
+      scaling capabilities
+    digest: f3afa945a6174962b890bfe704496dbddfe898106fb273276d7e65399b54df77
+    home: https://cloudnative-pg.io
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - cloudnativepg
+    - cnpg
+    - cluster
+    - high-availability
+    maintainers:
+    - name: FeLiNa22
+    name: postgresql-ha
+    sources:
+    - https://github.com/cloudnative-pg/cloudnative-pg
+    type: application
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/postgresql-ha-1.0.0/postgresql-ha-1.0.0.tgz
+    version: 1.0.0
   searxng:
   - apiVersion: v2
     appVersion: 1.0.1
@@ -156,6 +401,28 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/searxng-1.0.7/searxng-1.0.7.tgz
     version: 1.0.7
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-12-03T05:58:41.822197371Z"
+    description: Raul SearXNG Helm Chart
+    digest: 486f04eca8d6ec5d7ae37a4c1009e0c6ea9956bf548e2aecf114968c61a96117
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/searxng
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - searxng
+    - metasearch
+    - search
+    - privacy
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: searxng
+    sources:
+    - https://github.com/searxng/searxng
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/searxng-1.0.0/searxng-1.0.0.tgz
+    version: 1.0.0
   servarr:
   - apiVersion: v2
     appVersion: 1.2.2
@@ -194,6 +461,38 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/servarr-1.2.2/servarr-1.2.2.tgz
     version: 1.2.2
+  - apiVersion: v2
+    appVersion: 1.2.2
+    created: "2025-12-03T05:58:42.042680068Z"
+    description: Raul Servarr Helm Chart
+    digest: 231c579410989fa0750dc45868f581caafc67f39434d215315555ce18442eaf7
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/servarr
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - bazarr
+    - lidarr
+    - sonarr
+    - radarr
+    - flaresolverr
+    - jellyfin
+    - jellyseerr
+    - qbittorrent
+    - prowlarr
+    - cleanuparr
+    - sabnzbd
+    - frigate
+    - plex
+    - emby
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: servarr
+    sources:
+    - https://github.com/Servarr
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/servarr-1.0.0/servarr-1.0.0.tgz
+    version: 1.0.0
   traefik-cloudflared-source-ip:
   - apiVersion: v2
     appVersion: 2.10.7
@@ -255,4 +554,26 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/traefik-whitelist-ddns-1.0.5/traefik-whitelist-ddns-1.0.5.tgz
     version: 1.0.5
-generated: "2025-12-01T00:03:23.705485634Z"
+  vaultwarden:
+  - apiVersion: v2
+    appVersion: 1.32.4
+    created: "2025-12-03T05:58:42.262076116Z"
+    description: Vaultwarden Helm Chart
+    digest: ec3c613136190fdb4735328bf8bcce7656a50070b73bace2098ccbd4e1154098
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/vaultwarden
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - vaultwarden
+    - bitwarden
+    - password-manager
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: vaultwarden
+    sources:
+    - https://github.com/dani-garcia/vaultwarden
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/vaultwarden-1.0.0/vaultwarden-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-12-03T05:58:42.262103437Z"
