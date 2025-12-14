@@ -90,6 +90,29 @@ entries:
   frigate:
   - apiVersion: v2
     appVersion: 0.14.1
+    created: "2025-12-14T21:44:07.655007515Z"
+    description: Frigate NVR Helm Chart
+    digest: d7efa3d26f5a007536a618750b2f65767456265cecd525c27c5f482fc32d475d
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/frigate
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - frigate
+    - nvr
+    - security
+    - cameras
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: frigate
+    sources:
+    - https://github.com/blakeblackshear/frigate
+    type: application
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/frigate-1.0.2/frigate-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 0.14.1
     created: "2025-12-03T06:12:55.365700706Z"
     description: Frigate NVR Helm Chart
     digest: d20040ab8d1ab4a542670b9fa3f4887894cf019f29bff1fe332e049e509a64c9
@@ -133,6 +156,28 @@ entries:
     - https://github.com/FeLiNa22/helm/releases/download/home-assistant-1.0.1/home-assistant-1.0.1.tgz
     version: 1.0.1
   immich:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-12-14T21:44:07.777829499Z"
+    description: A Helm chart for Immich - High performance self-hosted photo and
+      video management solution
+    digest: d8388861662bf655faf5bc2a02149e9e79e7028c2df28d43295784dd9ef30f50
+    home: https://immich.app
+    keywords:
+    - immich
+    - photos
+    - videos
+    - media
+    - self-hosted
+    maintainers:
+    - name: FeLiNa22
+    name: immich
+    sources:
+    - https://github.com/immich-app/immich
+    type: application
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/immich-1.0.3/immich-1.0.3.tgz
+    version: 1.0.3
   - apiVersion: v2
     appVersion: "1.0"
     created: "2025-12-04T00:34:23.842141551Z"
@@ -200,6 +245,28 @@ entries:
     - https://github.com/FeLiNa22/helm/releases/download/mealie-1.0.1/mealie-1.0.1.tgz
     version: 1.0.1
   nextcloud:
+  - apiVersion: v2
+    appVersion: 30.0.2
+    created: "2025-12-14T21:44:07.92507574Z"
+    description: Nextcloud Helm Chart
+    digest: 88896d21322423b80b750f05a8a656b5aef6e1f1c87e4f188f57280650601f5c
+    home: https://github.com/FeLiNa22/homeserver/tree/main/charts/nextcloud
+    icon: https://raulpatel.com/images/raul.svg
+    keywords:
+    - kubernetes
+    - nextcloud
+    - cloud
+    - storage
+    maintainers:
+    - name: raulpatel
+      url: https://raulpatel.com
+    name: nextcloud
+    sources:
+    - https://github.com/nextcloud/server
+    type: application
+    urls:
+    - https://github.com/FeLiNa22/helm/releases/download/nextcloud-1.0.2/nextcloud-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 30.0.2
     created: "2025-12-03T06:12:56.0032252Z"
@@ -486,4 +553,4 @@ entries:
     urls:
     - https://github.com/FeLiNa22/helm/releases/download/vaultwarden-1.0.1/vaultwarden-1.0.1.tgz
     version: 1.0.1
-generated: "2025-12-10T21:35:44.064129274Z"
+generated: "2025-12-14T21:44:07.925148617Z"
