@@ -1,4 +1,4 @@
-{{- if and (index .Values "home-assistant" "enabled") (index .Values "home-assistant" "autoscaling" "enabled") }}
+{{- if and .Values.enabled .Values.autoscaling.enabled }}
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -13,18 +13,19 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ .Release.Name }}
-  minReplicas: {{ index .Values "home-assistant" "autoscaling" "minReplicas" }}
-  maxReplicas: {{ index .Values "home-assistant" "autoscaling" "maxReplicas" }}
+  minReplicas: {{ .Values.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
-    {{- if index .Values "home-assistant" "autoscaling" "targetCPUUtilizationPercentage" }}
+    {{- if .Values.autoscaling.targetCPUUtilizationPercentage }}
     - type: Resource
       resource:
         name: cpu
-        targetAverageUtilization: {{ index .Values "home-assistant" "autoscaling" "targetCPUUtilizationPercentage" }}
+        targetAverageUtilization: {{ .Values.autoscaling.targetCPUUtilizationPercentage }}
     {{- end }}
-    {{- if index .Values "home-assistant" "autoscaling" "targetMemoryUtilizationPercentage" }}
+    {{- if .Values.autoscaling.targetMemoryUtilizationPercentage }}
     - type: Resource
       resource:
         name: memory
-        targetAverageUtilization: {{ index .Values "home-assistant" "autoscaling" "targetMemoryUtilizationPercentage" }}
+        targetAverageUtilization: {{ .Values.autoscaling.targetMemoryUtilizationPercentage }}
     {{- end }}
+{{- end }}

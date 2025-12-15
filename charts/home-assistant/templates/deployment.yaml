@@ -1,4 +1,4 @@
-{{- if index .Values "home-assistant" "enabled" }}
+{{- if .Values.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -9,18 +9,18 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
     app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
 spec:
-  {{- if not (index .Values "home-assistant" "autoscaling" "enabled") }}
-  replicas: {{ index .Values "home-assistant" "replicaCount" }}
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
   {{- end }}
   strategy:
-    {{- index .Values "home-assistant" "deployment" "strategy" | toYaml | nindent 4 }}
+    {{- .Values.deployment.strategy | toYaml | nindent 4 }}
   selector:
     matchLabels:
       app.kubernetes.io/name: home-assistant
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-      {{- with index .Values "home-assistant" "podAnnotations" }}
+      {{- with .Values.podAnnotations }}
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
@@ -30,60 +30,61 @@ spec:
         app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
         app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
     spec:
-      {{- with index .Values "home-assistant" "imagePullSecrets" }}
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ (index .Values "home-assistant" "serviceAccount" "name") | default (printf "%s-home-assistant" .Release.Name) }}
+      serviceAccountName: {{ .Values.serviceAccount.name | default (printf "%s-home-assistant" .Release.Name) }}
       securityContext:
-        {{- toYaml (index .Values "home-assistant" "podSecurityContext") | nindent 8 }}
-      {{- if index .Values "home-assistant" "initContainers" }}
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      {{- if .Values.initContainers }}
       initContainers:
-        {{- toYaml (index .Values "home-assistant" "initContainers") | nindent 8 }}
+        {{- toYaml .Values.initContainers | nindent 8 }}
       {{- end }}
       volumes:
         - name: config
-          {{- if index .Values "home-assistant" "persistence" "enabled" }}
+          {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ (index .Values "home-assistant" "persistence" "existingClaim") | default (printf "%s-home-assistant" .Release.Name) }}
+            claimName: {{ .Values.persistence.existingClaim | default (printf "%s-home-assistant" .Release.Name) }}
           {{- else }}
           emptyDir: { }
           {{- end }}
-        {{- if index .Values "home-assistant" "persistence" "additionalVolumes" }}
-          {{- index .Values "home-assistant" "persistence" "additionalVolumes" | toYaml | nindent 8}}
+        {{- if .Values.persistence.additionalVolumes }}
+          {{- .Values.persistence.additionalVolumes | toYaml | nindent 8}}
         {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
-            {{- toYaml (index .Values "home-assistant" "securityContext") | nindent 12 }}
-          image: "{{ index .Values "home-assistant" "image" "repository" }}:{{ (index .Values "home-assistant" "image" "tag") | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ index .Values "home-assistant" "image" "pullPolicy" }}
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - mountPath: /config
               name: config
-          {{- if index .Values "home-assistant" "persistence" "additionalMounts" }}
-            {{- index .Values "home-assistant" "persistence" "additionalMounts" | toYaml | nindent 12 }}
+          {{- if .Values.persistence.additionalMounts }}
+            {{- .Values.persistence.additionalMounts | toYaml | nindent 12 }}
           {{- end }}
           ports:
             - name: http
               containerPort: 8123
               protocol: TCP
           env:
-            {{- range $k,$v := index .Values "home-assistant" "env" }}
+            {{- range $k,$v := .Values.env }}
             - name: {{ $k }}
               value: {{ $v | quote }}
             {{- end }}
           resources:
-            {{- toYaml (index .Values "home-assistant" "resources") | nindent 12 }}
-      {{- with index .Values "home-assistant" "nodeSelector" }}
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with index .Values "home-assistant" "affinity" }}
+      {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      {{- with index .Values "home-assistant" "tolerations" }}
+      {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end }}

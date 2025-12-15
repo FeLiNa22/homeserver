@@ -1,4 +1,4 @@
-{{- if and (index .Values "home-assistant" "enabled") (index .Values "home-assistant" "persistence" "enabled") (not (index .Values "home-assistant" "persistence" "existingClaim")) }}
+{{- if and .Values.enabled .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -8,16 +8,17 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name | quote }}
     app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
     app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
-  {{- if index .Values "home-assistant" "persistence" "annotations" }}
+  {{- if .Values.persistence.annotations }}
   annotations:
-    {{- toYaml (index .Values "home-assistant" "persistence" "annotations") | nindent 4 }}
+    {{- toYaml .Values.persistence.annotations | nindent 4 }}
   {{- end }}
 spec:
   accessModes:
-    - {{ index .Values "home-assistant" "persistence" "accessMode" | quote }}
-  {{- if index .Values "home-assistant" "persistence" "storageClass" }}
-  storageClassName: {{ index .Values "home-assistant" "persistence" "storageClass" | quote }}
+    - {{ .Values.persistence.accessMode | quote }}
+  {{- if .Values.persistence.storageClass }}
+  storageClassName: {{ .Values.persistence.storageClass | quote }}
   {{- end }}
   resources:
     requests:
-      storage: {{ index .Values "home-assistant" "persistence" "size" | quote }}
+      storage: {{ .Values.persistence.size | quote }}
+{{- end }}
