@@ -267,7 +267,7 @@ service:
 ## @param ingress.rules.http.paths[0].backend.service.port.name Name of the service port.
 ##
 ingress:
-  enabled: false
+  enabled: true
   annotations: {}
   tls:
     enabled: false

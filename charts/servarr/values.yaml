@@ -91,7 +91,7 @@ jellyfin:
     externalTrafficPolicy: null
 
   ingress:
-    enabled: false
+    enabled: true
     labels: {}
     annotations: {}
       # kubernetes.io/ingress.class: nginx
@@ -857,7 +857,7 @@ jellyseerr:
     nodePort: ""
 
   ingress:
-    enabled: false
+    enabled: true
     className: ""
     annotations: {}
       # kubernetes.io/ingress.class: nginx
@@ -1709,7 +1709,7 @@ plex:
     nodePort: ""
 
   ingress:
-    enabled: false
+    enabled: true
     className: ""
     annotations: {}
       # kubernetes.io/ingress.class: nginx
@@ -1850,7 +1850,7 @@ emby:
     nodePort: ""
 
   ingress:
-    enabled: false
+    enabled: true
     className: ""
     annotations: {}
       # kubernetes.io/ingress.class: nginx
