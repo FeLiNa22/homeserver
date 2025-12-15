@@ -12,7 +12,7 @@
 ## @param serviceAccount.name The name of the service account to use. If not set and create is true, a new service account will be created with a generated name.
 ## @param podAnnotations Additional annotations to add to the pod.
 ## @param podSecurityContext The security context to use for the pod.
-## @param securityContext The security context to use for the container.
+## @param securityContext.privileged Whether to run the container in privileged mode.
 ## @param initContainers Additional init containers to add to the pod.
 ## @param service.type The type of service to create.
 ## @param service.port The port on which the service will run.
