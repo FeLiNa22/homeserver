@@ -1,4 +1,4 @@
-{{- if and .Values.jellyfin.enabled .Values.jellyfin.persistence.config.enabled (not .Values.jellyfin.persistence.config.existingClaim) }}
+{{- if and .Values.jellyfin.enabled .Values.jellyfin.persistence.enabled (not .Values.jellyfin.persistence.existingClaim) }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
