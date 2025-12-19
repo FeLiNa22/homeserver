@@ -116,9 +116,6 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: config
-            {{- if .Values.jellyfin.persistence.config.subPath }}
-              subPath: {{ .Values.jellyfin.persistence.config.subPath }}
-            {{- end }}
             {{- range .Values.jellyfin.persistence.extraExistingClaimMounts }}
             - name: {{ .name }}
               mountPath: {{ .mountPath }}
@@ -155,9 +152,9 @@ spec:
   {{- end }}
       volumes:
       - name: config
-      {{- if .Values.jellyfin.persistence.config.enabled }}
+      {{- if .Values.jellyfin.persistence.enabled }}
         persistentVolumeClaim:
-          claimName: {{ if .Values.jellyfin.persistence.config.existingClaim }}{{ .Values.jellyfin.persistence.config.existingClaim }}{{- else }}{{ .Release.Name }}-jellyfin{{- end }}
+          claimName: {{ if .Values.jellyfin.persistence.existingClaim }}{{ .Values.jellyfin.persistence.existingClaim }}{{- else }}{{ .Release.Name }}-jellyfin{{- end }}
       {{- else }}
         emptyDir: {}
       {{- end }}
