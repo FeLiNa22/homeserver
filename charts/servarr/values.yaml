@@ -22,22 +22,13 @@
 ## @param jellyfin.ingress.path The path to use for the ingress.
 ## @param jellyfin.ingress.hosts The hosts to use for the ingress.
 ## @param jellyfin.ingress.tls The TLS configuration for the ingress.
-## @param jellyfin.persistence.config.enabled Whether to enable persistence for the config.
-## @param jellyfin.persistence.config.storageClass The storage class to use for the config.
-## @param jellyfin.persistence.config.existingClaim The name of an existing claim to use for the config.
-## @param jellyfin.persistence.config.subPath The subPath to use for the config's volume mount.
-## @param jellyfin.persistence.config.accessMode The access mode to use for the config.
+## @param jellyfin.persistence.enabled Whether to enable persistence for the config.
+## @param jellyfin.persistence.storageClass The storage class to use for the config.
+## @param jellyfin.persistence.existingClaim The name of an existing claim to use for the config.
+## @param jellyfin.persistence.accessMode The access mode to use for the config.
 ## @param jellyfin.persistence.config.size The size to use for the config.
 ## @param jellyfin.persistence.config.labels Additional labels to add to the config.
 ## @param jellyfin.persistence.config.annotations Additional annotations to add to the config.
-## @param jellyfin.persistence.media.enabled Whether to enable persistence for the media.
-## @param jellyfin.persistence.media.storageClass The storage class to use for the media.
-## @param jellyfin.persistence.media.existingClaim The name of an existing claim to use for the media.
-## @param jellyfin.persistence.media.subPath The subPath to use for the media's volume mount.
-## @param jellyfin.persistence.media.accessMode The access mode to use for the media. Shared volume between all servarr applications, if running on different nodes, set to ReadWriteMany.
-## @param jellyfin.persistence.media.size The size to use for the media.
-## @param jellyfin.persistence.media.labels Additional labels to add to the media.
-## @param jellyfin.persistence.media.annotations Additional annotations to add to the media.
 ## @param jellyfin.persistence.extraExistingClaimMounts Additional existing claim mounts to add to the pod.
 ## @param jellyfin.resources The resources to use for the pod.
 ## @param jellyfin.nodeSelector The node selector to use for the pod.
@@ -105,22 +96,12 @@ jellyfin:
     #      - chart-example.local
 
   persistence:
-    config:
       enabled: true
       storageClass: ""
       existingClaim: ""
       subPath: ""
       accessMode: ReadWriteOnce
       size: 1Gi
-      labels: {}
-      annotations: {}
-    media:
-      enabled: true
-      storageClass: ""
-      existingClaim: ""
-      subPath: ""
-      accessMode: ReadWriteMany
-      size: 10Gi
       labels: {}
       annotations: {}
 
