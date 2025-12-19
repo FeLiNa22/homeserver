@@ -22,5 +22,7 @@ spec:
   resources:
     requests:
       storage: {{ .Values.jellyfin.persistence.size | quote }}
+  {{- if .Values.jellyfin.persistence.storageClass }}
   storageClassName: {{ .Values.jellyfin.persistence.storageClass | quote }}
+  {{- end }}
 {{- end }}
