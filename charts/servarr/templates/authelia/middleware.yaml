@@ -1,0 +1,21 @@
+{{- if and .Values.authelia.enabled (eq .Values.authelia.ingressController "traefik") }}
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: authelia-auth
+  labels:
+    app.kubernetes.io/name: authelia
+    app.kubernetes.io/instance: {{ .Release.Name }}-authelia
+    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+    app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
+    app.kubernetes.io/part-of: {{ .Release.Name | quote }}
+spec:
+  forwardAuth:
+    address: http://{{ .Release.Name }}-authelia.{{ .Release.Namespace }}.svc.cluster.local:9091/api/verify?rd=https://{{ (index .Values.authelia.ingress.hosts 0).host }}/
+    trustForwardHeader: true
+    authResponseHeaders:
+      - Remote-User
+      - Remote-Groups
+      - Remote-Name
+      - Remote-Email
+{{- end }}

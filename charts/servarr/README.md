@@ -767,6 +767,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `authelia.persistence.enabled`                            | Whether to enable persistence.                                                                                                      | `true`                             |
 | `authelia.persistence.size`                               | The size to use for the persistence.                                                                                                | `100Mi`                            |
 | `authelia.autoConfigureApps`                              | When enabled, automatically adds Authelia authentication middleware annotations to ingresses of all enabled apps.                   | `true`                             |
+| `authelia.ingressController`                              | Ingress controller to use for auto-configuration. Supported values: nginx, traefik.                                                 | `nginx`                            |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
@@ -791,14 +792,21 @@ helm install example -f values.yaml raulpatel/example
 
 Authelia is an authentication and authorization server that provides single sign-on (SSO) and two-factor authentication (2FA) for your applications. This chart includes built-in support for Authelia that can automatically protect all your servarr applications.
 
-#### Enabling Authelia
+#### Supported Ingress Controllers
 
-To enable Authelia with automatic protection for all apps:
+The chart supports automatic configuration for the following ingress controllers:
+- **Nginx** (default)
+- **Traefik**
+
+#### Enabling Authelia with Nginx
+
+To enable Authelia with automatic protection for all apps using Nginx:
 
 ```yaml
 authelia:
   enabled: true
   autoConfigureApps: true
+  ingressController: "nginx"  # This is the default
   
   ingress:
     enabled: true
@@ -835,19 +843,60 @@ radarr:
             pathType: Prefix
 ```
 
-When `authelia.autoConfigureApps` is set to `true`, the chart will automatically add the necessary Nginx ingress annotations to all enabled app ingresses to integrate with Authelia. This includes:
+When `authelia.autoConfigureApps` is set to `true` and `ingressController` is `nginx`, the chart will automatically add the necessary Nginx ingress annotations to all enabled app ingresses:
 
 - `nginx.ingress.kubernetes.io/auth-url`: Points to the Authelia verification endpoint
 - `nginx.ingress.kubernetes.io/auth-signin`: Redirects to the Authelia sign-in page when authentication is required
+
+#### Enabling Authelia with Traefik
+
+To enable Authelia with automatic protection for all apps using Traefik:
+
+```yaml
+authelia:
+  enabled: true
+  autoConfigureApps: true
+  ingressController: "traefik"
+  
+  ingress:
+    enabled: true
+    className: "traefik"
+    hosts:
+      - host: auth.example.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls:
+      - secretName: authelia-tls
+        hosts:
+          - auth.example.com
+
+# Enable ingress for the apps you want to protect
+sonarr:
+  ingress:
+    enabled: true
+    className: "traefik"
+    hosts:
+      - host: sonarr.example.com
+        paths:
+          - path: /
+            pathType: Prefix
+```
+
+When `ingressController` is set to `traefik`, the chart will:
+1. Create a Traefik Middleware CRD for Authelia
+2. Automatically add the `traefik.ingress.kubernetes.io/router.middlewares` annotation to all enabled app ingresses
 
 #### Manual Configuration
 
 If you need more control over which apps are protected, you can disable `autoConfigureApps` and manually add the annotations:
 
+**For Nginx:**
 ```yaml
 authelia:
   enabled: true
   autoConfigureApps: false
+  ingressController: "nginx"
 
 sonarr:
   ingress:
@@ -855,6 +904,20 @@ sonarr:
     annotations:
       nginx.ingress.kubernetes.io/auth-url: "http://RELEASE-NAME-authelia.NAMESPACE.svc.cluster.local:9091/api/verify"
       nginx.ingress.kubernetes.io/auth-signin: "https://auth.example.com/api/auth/signin?rm=$request_method"
+```
+
+**For Traefik:**
+```yaml
+authelia:
+  enabled: true
+  autoConfigureApps: false
+  ingressController: "traefik"
+
+sonarr:
+  ingress:
+    enabled: true
+    annotations:
+      traefik.ingress.kubernetes.io/router.middlewares: "NAMESPACE-authelia-auth@kubernetescrd"
 ```
 
 **Note**: Authelia requires additional configuration to work properly, including setting up authentication backends, access control rules, and session configuration. Please refer to the [Authelia documentation](https://www.authelia.com/configuration/prologue/introduction/) for detailed configuration instructions.

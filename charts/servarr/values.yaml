@@ -1926,6 +1926,7 @@ emby:
 ## @param authelia.persistence.additionalVolumes Additional volumes to add to the pod.
 ## @param authelia.persistence.additionalMounts Additional volume mounts to add to the pod.
 ## @param authelia.autoConfigureApps Whether to automatically configure Authelia authentication for all enabled apps' ingresses.
+## @param authelia.ingressController The ingress controller to use for auto-configuration. Supported values: nginx, traefik.
 ##
 authelia:
   enabled: false
@@ -2025,5 +2026,9 @@ authelia:
   # When enabled, automatically adds Authelia authentication middleware annotations to ingresses
   # of all enabled apps (sonarr, radarr, etc.) that have ingress enabled
   autoConfigureApps: true
+  
+  # Ingress controller to use for auto-configuration
+  # Supported values: nginx, traefik
+  ingressController: "nginx"
 
 
